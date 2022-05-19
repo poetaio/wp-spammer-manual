@@ -1,0 +1,9 @@
+extends main_layout
+
+block vars
+    - const active = "messages"
+    - const pageName = "/messages"
+
+block content
+    include includes/message/message_list
+    include includes/pagination

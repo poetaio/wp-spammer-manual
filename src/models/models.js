@@ -16,8 +16,9 @@ const User = sequelize.define('user', {
 
 const Message = sequelize.define('message', {
     messageId: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    messageName: {type: DataTypes.STRING, unique: true, allowNull: true,},
-    messageText: {type: DataTypes.STRING, allowNull: true}
+    name: {type: DataTypes.STRING, unique: true, allowNull: true,},
+    subject: {type: DataTypes.STRING, allowNull: true},
+    text: {type: DataTypes.STRING, allowNull: true},
 });
 
 const Email = sequelize.define('email', {
@@ -28,8 +29,14 @@ const Email = sequelize.define('email', {
     lastName: {type: DataTypes.STRING, allowNull: true}
 });
 
-User.hasOne(UserAccount);
-UserAccount.belongsTo(User);
+User.hasOne(UserAccount, {
+    foreignKey: "userId",
+    as: "account",
+});
+UserAccount.belongsTo(User, {
+    foreignKey: "userId",
+    as: "user",
+});
 
 module.exports = {
     UserAccount,

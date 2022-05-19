@@ -1,0 +1,10 @@
+.emails_list__item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.emails__item_email {
+    display: flex;
+    flex-grow: 1;
+}
+

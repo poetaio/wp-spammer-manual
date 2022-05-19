@@ -1,0 +1,25 @@
+// Add email Modal
+#emails__add_modal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='emails__add_modal' aria-hidden='true')
+    .modal-dialog(role='document')
+        .modal-content
+            .modal-header
+                h5#addModalLabel.modal-title Add Email
+                button.btn-close(type='button' data-dismiss='modal')
+            .modal-body
+                form
+                .form-group
+                    label.col-form-label(for='recipient-name') Email:
+                    input.emails__add_modal__email.form-control(type='text')
+                .form-group
+                    label.col-form-label(for='message-text') First Name:
+                    input.emails__add_modal__first_name.form-control(type='text')
+                .form-group
+                    label.col-form-label(for='message-text') Second Name:
+                    input.emails__add_modal__second_name.form-control(type='text')
+                .form-group
+                    label.col-form-label(for='message-text') Last Name:
+                    input.emails__add_modal__last_name.form-control(type='text')
+
+            .modal-footer
+                button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                button.btn.btn-primary.emails__add_modal_button(type='button', onClick='addEmail()') Add Email

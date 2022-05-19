@@ -1,0 +1,14 @@
+.error_message {
+    width: 200px;
+    position: absolute;
+    margin-top: 70px;
+    margin-right: 30px;
+    top: 0px;
+    right: 0px;
+    z-index: 999999;
+    word-wrap: break-word;
+}
+
+.error_message--above_modal {
+    margin-top: 20px;
+}

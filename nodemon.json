@@ -1,8 +1,0 @@
-{
-  "env": {
-    "PORT": 8889,
-    "DB_NAME": "webprog_spammermanual",
-    "DB_USER": "webprog_user",
-    "DB_PASSWORD": "password"
-  }
-}

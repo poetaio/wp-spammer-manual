@@ -1,0 +1,29 @@
+.emails
+    .emails__header Emails
+    button.btn.btn-danger.emails__spam_button(onClick='toggleSpamModal()') SPAM
+    .emails__headers
+        .emails__header_email.col-md-6.col-lg-4 Email
+        .emails__header_firstName.col-md-2.col-lg-2 First Name
+        .emails__header_secondName.col-md-2.col-lg-2 Second Name
+        .emails__header_lastName.col-md-2.col-lg-2
+            .email__header_lastName_inner.col-md-8 Last Name
+            .email__header_empty.col-md-4 &nbsp;
+
+    if emails.length > 0
+        ul.emails__list
+            each email in emails
+                li.emails__item(onClick=`toggleEditEmail(${email.emailId}, '${email.email}', '${email.firstName}', '${email.secondName}', '${email.lastName}')`)
+                    .emails__item_email.col-md-6.col-lg-4= email.email
+                    .emails__item_firstName.col-md-2.col-lg-2= email.firstName
+                    .emails__item_secondName.col-md-2.col-lg-2= email.secondName
+                    .emails__item_lastName.col-md-2.col-lg-2
+                        div.col-md-8= email.lastName
+                        button.emails__item_remove_button.btn.col-md-4(onClick=`deleteEmail(event, ${email.emailId})`)
+    else
+        div.emails__no_items No items to display :(
+
+    button.emails__add_button.btn.btn-primary(type='button' data-toggle='modal' data-target='#emails__add_modal') +
+
+include add_email_modal
+include edit_email_modal
+include spam_modal

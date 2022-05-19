@@ -1,0 +1,24 @@
+// Edit email Modal
+#emails__spam_modal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='emails__edit_modal' aria-hidden='true')
+    .modal-dialog(role='document')
+        .modal-content
+            .modal-header
+                h5#exampleModalLabel.modal-title Spam!
+                button.btn-close(type='button' data-dismiss='modal')
+            .modal-body
+                form
+                .form-group
+                    label.col-form-label(for='recipient-name') Name:
+                    select.emails__spam_modal_name.form-control(onchange='onMessageSelected(event)')
+                        each message in messages
+                            option(value=message.messageId)= message.name
+                .form-group
+                    label.col-form-label(for='message-text') Subject:
+                    textarea.emails__spam_modal__subject.form-control
+                .form-group
+                    label.col-form-label(for='message-text') Text:
+                    textarea.emails__spam_modal__text.form-control
+
+            .modal-footer
+                button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                button.btn.btn-primary.emails__add_modal_button(type='button', onClick='spam()') Spam!
