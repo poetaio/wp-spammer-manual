@@ -1,0 +1,21 @@
+html {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #eeeeee;
+}
+
+.main_wrapper {
+    display: flex;
+    /* background: #eeeeee; */
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,24 @@
+.emails
+    .emails__header Messages
+
+    if messages.length > 0
+        .emails__headers
+            .emails__header_firstName.col-md-11.col-lg-11 Message Name
+            .emails__header_lastName.col-md-1.col-lg-1
+                .email__header_lastName_inner.col-md-8
+                .email__header_empty.col-md-4 &nbsp;
+
+        ul.emails__list
+            each message in messages
+                li.emails__item(onClick=`toggleEditMessage(event, ${ message.messageId })`)
+                    .emails__item_firstName.col-md-11.col-lg-11= message.name
+                    .emails__item_lastName.col-md-1.col-lg-1
+                        div.col-md-8 &nbsp;
+                        button.emails__item_remove_button.btn.col-md-4(onClick=`deleteMessage(event, ${message.messageId})`)
+    else
+        div.emails__no_items No items to display :(
+
+    button.emails__add_button.btn.btn-primary(type='button' data-toggle='modal' data-target='#messages__add_modal') +
+
+include add_message_modal
+include edit_message_modal

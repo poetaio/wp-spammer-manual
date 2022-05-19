@@ -1,2 +1,2 @@
-# Spammer manual
-Simple email list manager for spamming
+## Web Programming. Lab2. Spammer Manual
+### Email list and spam manager

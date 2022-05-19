@@ -1,0 +1,21 @@
+doctype html
+html
+    - let emails = [{email: "ilia@gmail.com",firstName: "ilia",secondName: "ivanovych",lastName: "krutish"}, {email: "ilia@gmail.com",firstName: "ilia",secondName: "ivanovych",lastName: "krutish"}, {email: "ilia@gmail.com",firstName: "ilia",secondName: "ivanovych",lastName: "krutish"}, {email: "ilia@gmail.com",firstName: "ilia",secondName: "ivanovych",lastName: "krutish"}]
+    - let active = "home"
+    - let errorMessage = "Something went wrong"
+    head
+        include includes/head_links
+        title Email Spammer
+        //- link(href='css/emails_list.css', rel='stylesheet')
+
+    body.main_wrapper
+        include includes/header
+        include includes/emails
+        include includes/pagination
+
+    script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js")
+    script(src="https://unpkg.com/axios/dist/axios.min.js")
+    script(src="https://unpkg.com/uuid@latest/dist/umd/uuidv4.min.js")
+    script(src="./assets/script.js")

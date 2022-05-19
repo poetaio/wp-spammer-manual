@@ -1,0 +1,27 @@
+nav.paging(aria-label='...')
+    ul.pagination
+        // first page
+        if currentPage == 1    
+            li.page-item.disabled
+                a.page-link(href=`${pageName}?page=${1}` tabindex='-1') First 
+        else
+            li.page-item
+                a.page-link(href=`${pageName}?page=${1}` tabindex='-1') First 
+        // previous page
+        if currentPage !== 1
+            li.page-item
+                a.page-link(href=`${pageName}?page=${currentPage - 1}`)= currentPage - 1
+        // active
+        li.page-item.active 
+            a.page-link= currentPage
+        // next page
+        if currentPage !== lastPage
+            li.page-item
+                a.page-link(href=`${pageName}?page=${currentPage + 1}`)=currentPage + 1
+        // last page
+        if currentPage === lastPage
+            li.page-item.disabled
+                a.page-link(href=`${pageName}?page=${lastPage}`) Last
+        else
+            li.page-item
+                a.page-link(href=`${pageName}?page=${lastPage}`) Last

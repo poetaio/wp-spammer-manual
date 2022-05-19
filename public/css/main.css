@@ -1,0 +1,10 @@
+html {
+    display: flex;
+    justify-content: center;
+}
+
+.main_wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}

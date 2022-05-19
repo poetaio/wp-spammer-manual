@@ -1,0 +1,47 @@
+.emails
+    .emails__header Emails
+    .emails__headers
+        .emails__header_email.col-md-6.col-lg-3 Email
+        .emails__header_firstName.col-md-2.col-lg-3 First Name
+        .emails__header_secondName.col-md-2.col-lg-3 Second Name
+        .emails__headers_lastName.col-md-2.col-lg-3
+            .email__header_lastName_inner.col-md-8 Last Name
+            .email__header_empty.col-md-4 &nbsp;
+    
+    ul.emails__list
+        each email in emails
+            li.emails__item
+                .emails__item_email.col-md-6.col-lg-3= email.email
+                .emails__item_firstName.col-md-2.col-lg-3= email.firstName
+                .emails__item_secondName.col-md-2.col-lg-3= email.secondName
+                .emails__item_lastName.col-md-2.col-lg-3
+                    div.col-md-8= email.lastName
+                    button.emails__item_remove_button.btn.col-md-4
+    
+    button.emails__add_button.btn.btn-primary(type='button' data-toggle='modal' data-target='#emails__add_modal') +
+
+// Modal
+#emails__add_modal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='emails__add_modal' aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        h5#exampleModalLabel.modal-title Modal title
+        button.btn-close(type='button' data-dismiss='modal')
+      .modal-body
+            form
+            .form-group
+                label.col-form-label(for='recipient-name') Email:
+                input.emails__add_modal__email.form-control(type='text')
+            .form-group
+                label.col-form-label(for='message-text') First Name:
+                input.emails__add_modal__first_name.form-control(type='text')
+            .form-group
+                label.col-form-label(for='message-text') Second Name:
+                input.emails__add_modal__second_name.form-control(type='text')
+            .form-group
+                label.col-form-label(for='message-text') Last Name:
+                input.emails__add_modal__last_name.form-control(type='text')
+
+      .modal-footer
+        button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+        button.btn.btn-primary.emails__add_modal_button(type='button') Add Email

@@ -1,0 +1,81 @@
+.emails {
+    /* max-width: 900px; */
+    width: 60%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.emails__header {
+    margin-top: 10px;
+    /* color: #a1a1a1; */
+    font-size: 30px;
+}
+
+.emails__headers {
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    color: #a1a1a1;
+    padding: 10px;
+}
+
+.emails__headers_lastName {
+    display: flex;
+}
+
+.email__headers_empty {
+    width: 20px;
+}
+
+.emails__list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.emails__item {
+    margin: 0px;
+    display: flex;
+    border: solid rgb(196, 196, 196) 1px;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    background-color: white;
+    height: 50px;
+    align-items: center;
+    padding: 10px;
+}
+
+.emails__item_lastName {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.emails__item_remove_button {
+    padding: 0;
+    margin: 0;
+    background-image: url('./delete-button.png');
+    background-position: center;
+    background-size: 16px;
+    height: 20px;
+    width: 20px;
+    background-repeat: no-repeat;
+}
+
+.emails__add_button {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 30px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
